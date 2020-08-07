@@ -3,5 +3,19 @@
 }
 
 <h1>Dr. Sneuss' Factory</h1>
-<p>@Html.ActionLink("Engineers", "Index", "Engineers")</p>
-<p>@Html.ActionLink("Machines", "Index", "Machines")</p>
+
+<h2>@Html.ActionLink("Engineers", "Index", "Engineers")</h2>
+<ul>
+@foreach (var engineer in ViewBag.Engineers)
+{
+  <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</li>
+}
+</ul>
+
+<h2>@Html.ActionLink("Machines", "Index", "Machines")</h2>
+<ul>
+@foreach (var machine in ViewBag.Machines)
+{
+  <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId })</li>
+}
+</ul>
