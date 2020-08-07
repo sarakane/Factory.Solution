@@ -15,8 +15,8 @@
   @Html.Label("Select machine")
   @Html.DropDownList("MachineId")
 
-  <input type="submit" value="Save"/>
+  <input type="submit" value="Add"/>
 }
 
 <p>@Html.ActionLink("Back to engineer details", "Details", new { id = Model.EngineerId})</p>
-<p>@Html.ActionLink("Back to engineers", "Index")</p>
+<p>@Html.ActionLink("Back to engineer list", "Index")</p>
