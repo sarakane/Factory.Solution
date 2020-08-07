@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>Machine Details</h1>
+<hr/>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+<h3>Engineers licensed for this machine:</h3>
+@if(@Model.Engineers.Count == 0)
+{
+  <p>No engineers are licensed for this machine.</p>
+}
+else
+{
+  <ul>
+    @foreach (var join in Model.Engineers)
+    {
+      <li>@join.Engineer.Name</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Edit machine", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Delete machine", "Delete", new { id = Model.MachineId})</p>
+<p>@Html.ActionLink("Back to machines", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
