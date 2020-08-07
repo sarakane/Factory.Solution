@@ -4,6 +4,14 @@
 
 @model Factory.Models.Engineer
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Engineers", "Index")</li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+
 <h1>Add an engineer</h1>
 @using (Html.BeginForm())
 {
@@ -12,5 +20,3 @@
 
   <input type="submit" value="Add"/>
 }
-
-@Html.ActionLink("Back to engineers", "Index")

@@ -2,7 +2,16 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer;
+@model Factory.Models.Engineer
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Engineers", "Index")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Details", "Details", new { id = Model.EngineerId})</li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Engineer</li>
+  </ol>
+</nav>
 
 <h1>Edit engineer: @Html.DisplayFor(model => model.Name)</h1>
 
@@ -10,11 +19,8 @@
 {
   @Html.HiddenFor(model => model.EngineerId)
 
-  @Html.DisplayNameFor(model => model.Name)
+  @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
   <input type="submit" value="Edit"/>
 }
-
-<p>@Html.ActionLink("Back to engineer details", "Details", new { id = Model.EngineerId})</p>
-<p>@Html.ActionLink("Back to engineers", "Index")</p>

@@ -2,8 +2,15 @@
   Layout = "_Layout";
 }
 
-@using Factory.Models;
-@model List<Factory.Models.Machine>;
+@using Factory.Models
+@model List<Factory.Models.Machine>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item active" aria-current="page">Machines</li>
+  </ol>
+</nav>
 
 <h1>Machines</h1>
 <hr/>
@@ -23,4 +30,3 @@ else
 }
 
 <p>@Html.ActionLink("Add new machine", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>

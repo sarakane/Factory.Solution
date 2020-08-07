@@ -4,17 +4,23 @@
 
 @model Factory.Models.Machine
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Machines", "Index")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Details", "Details", new { id = Model.MachineId})</li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
+
 <h1>Edit machine: @Html.DisplayFor(model => model.Name)</h1>
 
 @using(Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
 
-  @Html.DisplayNameFor(model => model.Name)
+  @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
   <input type="submit" value="Edit"/>
 }
-
-<p>@Html.ActionLink("Back to machine details", "Details", new { id = Model.MachineId})</p>
-<p>@Html.ActionLink("Back to machines", "Index")</p>

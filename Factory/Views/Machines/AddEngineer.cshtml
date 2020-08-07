@@ -4,6 +4,15 @@
 
 @model Factory.Models.Machine
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Machines", "Index")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Details", "Details", new { id = Model.MachineId})</li>
+    <li class="breadcrumb-item active" aria-current="page">Add Engineer</li>
+  </ol>
+</nav>
+
 <h1>Add Engineer</h1>
 <hr/>
 <h4>Add an engineer to this machine: @Html.DisplayFor(model => model.Name)</h4>
@@ -17,6 +26,3 @@
 
   <input type="submit" value="Add"/>
 }
-
-<p>@Html.ActionLink("Back to machine details", "Details", new { id = Model.MachineId})</p>
-<p>@Html.ActionLink("Back to machine list", "Index")</p>

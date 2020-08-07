@@ -4,6 +4,14 @@
 
 @model Factory.Models.Machine
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Machines", "Index")</li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+
 <h1>Add a new machine</h1>
 
 @using(Html.BeginForm())
@@ -13,6 +21,3 @@
 
   <input type="submit" value="Add"/>
 }
-
-<p>@Html.ActionLink("Back to machines", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>

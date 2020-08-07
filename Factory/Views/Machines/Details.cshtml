@@ -4,9 +4,17 @@
 
 @model Factory.Models.Machine
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Machines", "Index")</li>
+    <li class="breadcrumb-item active" aria-current="page">Details</li>
+  </ol>
+</nav>
+
 <h1>Machine Details</h1>
-<hr/>
 <h2>@Html.DisplayFor(model => model.Name)</h2>
+<hr/>
 
 <h3>Engineers licensed for this machine:</h3>
 @if(@Model.Engineers.Count == 0)
@@ -31,5 +39,3 @@ else
 <p>@Html.ActionLink("Edit machine", "Edit", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Add engineer", "AddEngineer", new { id = Model.MachineId})</p>
 <p>@Html.ActionLink("Delete machine", "Delete", new { id = Model.MachineId})</p>
-<p>@Html.ActionLink("Back to machines", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
