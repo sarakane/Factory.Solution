@@ -70,7 +70,6 @@ namespace Factory.Controllers
       _db.Engineers.Remove(thisEngineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
-      
     }
   }
 }
